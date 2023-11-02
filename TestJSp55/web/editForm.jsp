@@ -19,8 +19,8 @@
     <!--    start form-->
     <form action="edit.jsp"  method="post">
         <input type="hidden" class="form-control" id="id" name="id" value="<%=s.getId()%>" >
-    
-        
+
+
         <div class="row">
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">First Name</label>
@@ -38,26 +38,22 @@
                 <label  class="form-label">Subject</label>
                 <select class="form-select" name="subject" aria-label="Default select example" value="<%=s.getSubject()%>">
                     <option selected>Select Anyone</option>
-                    <option value="JEE">JEE</option>
-                    <option value="NT">NT</option>
-                    <option value="DDD">DDD</option>
-                    <option value="GAVE">GAVE</option>
+                    <option value="JEE" <%= s.getSubject().equals("JEE") ? "selected" : "" %>>JEE</option>
+                    <option value="NT" <%= s.getSubject().equals("NT") ? "selected" : "" %>>NT</option>
+                    <option value="DDD" <%= s.getSubject().equals("DDD") ? "selected" : "" %>>DDD</option>
+                    <option value="GAVE" <%= s.getSubject().equals("GAVE") ? "selected" : "" %>>GAVE</option>
                 </select>
             </div>
 
             <div class="col-md-6">
                 <label for="exampleInputEmail1" class="form-label">Gender</label>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="Male" name="gender" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Male
-                    </label>
+                    <input class="form-check-input" type="radio" value="Male" name="gender" id="flexRadioDefault1" <%= s.getGender().equals("Male") ? "checked" : "" %>>
+                    <label class="form-check-label" for="flexRadioDefault1">Male</label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" value="Female" name="gender" id="flexRadioDefault2" >
-                    <label class="form-check-label" >
-                        Female
-                    </label>
+                    <input class="form-check-input" type="radio" value="Female" name="gender" id="flexRadioDefault2" <%= s.getGender().equals("Female") ? "checked" : "" %>>
+                    <label class="form-check-label" for="flexRadioDefault2">Female</label>
                 </div>
             </div>
         </div>
@@ -68,8 +64,8 @@
 
             </div>
 
-             <div class="col-md-6">
-                 <button type="reset" class="btn btn-danger text-center" >Reset</button>
+            <div class="col-md-6">
+                <button type="reset" class="btn btn-danger text-center" >Reset</button>
 
             </div>
         </div>
