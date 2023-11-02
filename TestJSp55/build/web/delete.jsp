@@ -3,7 +3,8 @@
 <jsp:setProperty  name="s" property="*" />
 
 <% 
-int result=StudentDao.saveStudent(s);
+    
+int result=StudentDao.deleteStudent(s);
 
 if(result>0){
     response.sendRedirect("showAllStudent.jsp");

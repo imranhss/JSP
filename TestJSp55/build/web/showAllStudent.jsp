@@ -1,6 +1,6 @@
 <%@include file="header.jsp" %>
 
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="hasan" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page  import="model.Student"%>
 <%@page  import="dao.StudentDao"%>
 <%@page  import="java.util.*"%>
@@ -30,7 +30,7 @@
         </thead>
         
         <tbody>
-            <c:forEach items="${list}" var="s">
+            <hasan:forEach items="${list}" var="s">
                 <tr>
                     <td>${s.getId()}</td>
                     <td>${s.getGivenName()}</td>
@@ -38,12 +38,12 @@
                     <td>${s.getSubject()}</td>
                     <td>${s.getGender()}</td>
                     <td>
-                        <button type="submit" class="btn btn-primary">Edit</button>
-                        <button type="submit" class="btn btn-warning">Delete</button>
+                        <a  class="btn btn-primary" href="editForm.jsp?id=${s.getId()}" >Edit</a>
+                        <a  class="btn btn-warning" href="delete.jsp?id=${s.getId()}">Delete</a>
                     </td>
                     
                 </tr>               
-            </c:forEach>            
+            </hasan:forEach>            
         </tbody>
 
     </table>
