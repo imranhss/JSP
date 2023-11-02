@@ -10,7 +10,18 @@
     List<Student> list=StudentDao.getAllStudent();
     request.setAttribute("list", list);
     
+    int counter = 1; // Initialize a counter variable
+
+    // Iterate over the list of students
+    for (Student student : list) {
+        student.setSequence(counter++);
+    }
+    
 %>  
+
+
+
+
 
 <div class="container my-3 py-2">
     <div class="bg-success text-center">
@@ -28,20 +39,21 @@
                 <th scope="col">Action</th>
             </tr>
         </thead>
-        
+
         <tbody>
             <hasan:forEach items="${list}" var="s">
+
                 <tr>
-                    <td>${s.getId()}</td>
+                    <td>${s.getSequence()}</td>
                     <td>${s.getGivenName()}</td>
                     <td>${s.getLastName()}</td>
                     <td>${s.getSubject()}</td>
                     <td>${s.getGender()}</td>
                     <td>
-                        <a  class="btn btn-primary" href="editForm.jsp?id=${s.getId()}" >Edit</a>
+                        <a  class="btn btn-primary" href="editForm.jsp?hasan=${s.getId()}" >Edit</a>
                         <a  class="btn btn-warning" href="delete.jsp?id=${s.getId()}">Delete</a>
                     </td>
-                    
+
                 </tr>               
             </hasan:forEach>            
         </tbody>
@@ -51,7 +63,7 @@
 </div>
 
 <div class="mb-3">
-    
+
 </div>
 
 
