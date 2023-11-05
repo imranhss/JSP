@@ -1,6 +1,6 @@
 <jsp:useBean class="model.Student"  id="s" />
-<%@page  import="dao.StudentDao" %>
 <jsp:setProperty  name="s" property="*" />
+<%@page  import="dao.StudentDao" %>
 
 <% 
 int result=StudentDao.saveStudent(s);
